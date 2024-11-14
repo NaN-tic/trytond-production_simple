@@ -1,0 +1,34 @@
+#
+# Albert Cervera i Areny <albert@nan-tic.com>, 2024.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Last-Translator: Albert Cervera i Areny <albert@nan-tic.com>\n"
+"PO-Revision-Date: 2024-11-14 11:01+0100\n"
+"Project-Id-Version: \n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca_ES\n"
+"Content-Transfer-Encoding: 8bit\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+msgctxt "field:product.product,boms_editor:"
+msgid "BOMs Editor"
+msgstr "Editor LdMs"
+
+msgctxt "field:product.template,boms_editor:"
+msgid "BOMs Editor"
+msgstr "Editor LdMs"
+
+msgctxt "field:production.bom,product:"
+msgid "Product"
+msgstr "Producto"
+
+msgctxt "field:production.bom,product_readonly:"
+msgid "Product Readonly"
+msgstr "Producto de solo lectura"
+
+msgctxt "field:production.bom,template:"
+msgid "Template"
+msgstr "Plantilla"
