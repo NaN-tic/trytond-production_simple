@@ -133,7 +133,6 @@ class BOM(metaclass=PoolMeta):
                 output = bom.outputs[0]
                 output.product = product
             else:
-                template = Template(value)
                 output = BOMOutput(bom=bom, product=product, quantity=1,
                    unit=product.default_uom)
             to_save.append(output)

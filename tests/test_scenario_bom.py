@@ -1,7 +1,6 @@
 import unittest
 from proteus import Model
 from trytond.tests.test_tryton import drop_db
-from trytond.modules.mobisl.tests.tools import setup
 from trytond.tests.tools import activate_modules
 from trytond.modules.company.tests.tools import create_company
 
@@ -17,8 +16,7 @@ class Test(unittest.TestCase):
 
     def test_unit(self):
         # Load model and prepare generic data
-        vars = setup()
-        activate_modules('production_simple')
+        activate_modules(['production_simple', 'production_routing'])
 
         _ = create_company()
 
@@ -33,7 +31,7 @@ class Test(unittest.TestCase):
         template.code = '1'
         template.name = 'Output'
         template.type = 'goods'
-        template.default_uom = vars.unit
+        template.default_uom = unit
         template.producible = True
         template.save()
         product_out, = template.products
@@ -42,7 +40,7 @@ class Test(unittest.TestCase):
         template = Template()
         template.name = 'Input'
         template.type = 'goods'
-        template.default_uom = vars.unit
+        template.default_uom = unit
         template.save()
         product_in, = template.products
 
@@ -55,3 +53,23 @@ class Test(unittest.TestCase):
         self.assertEqual(bom.rec_name, '[1] Output')
         self.assertEqual(bom.name, '-')
 
+        # Create operations
+        Operation = Model.get('production.routing.operation')
+        operation = Operation(name='Setup')
+        operation.save()
+
+        # Create product
+        template = Template()
+        template.code = '2'
+        template.name = 'Output 2'
+        template.default_uom = unit
+        template.producible = True
+        template.save()
+        bom = template.boms_editor.new()
+        bom.inputs.new(product=product_in, quantity=10)
+
+        routing = bom.routings_editor.new()
+        step = routing.steps.new()
+        step.operation = operation
+
+        template.save()
