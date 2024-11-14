@@ -1,0 +1,11 @@
+<data>
+    <xpath expr="/tree" position="replace_attributes">
+        <tree editable="1"/>
+    </xpath>
+    <xpath expr="/tree/field[@name='quantity']" position="replace_attributes">
+        <field name="quantity" symbol=""/>
+    </xpath>
+    <xpath expr="/tree/field[@name='quantity']" position="after">
+        <field name="unit"/>
+    </xpath>
+</data>

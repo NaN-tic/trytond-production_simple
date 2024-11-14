@@ -1,0 +1,10 @@
+<data>
+    <xpath expr="/form/notebook" position="inside">
+        <page name="routings_editor">
+            <field name="routings_editor" colspan="4" mode="form,tree" height="500"/>
+        </page>
+        <page name="routings">
+            <field name="routings" colspan="4" height="500"/>
+        </page>
+    </xpath>
+</data>

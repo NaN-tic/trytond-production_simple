@@ -1,0 +1,5 @@
+<data>
+    <xpath expr="//field[@name='name']" position="replace">
+        <field name="rec_name"/>
+    </xpath>
+</data>

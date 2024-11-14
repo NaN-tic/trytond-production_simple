@@ -1,0 +1,7 @@
+<data>
+    <xpath expr="//notebook" position="inside">
+        <page name="boms_editor">
+            <field name="boms_editor" colspan="4" mode="form,tree" height="500"/>
+        </page>
+    </xpath>
+</data>

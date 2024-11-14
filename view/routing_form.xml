@@ -1,0 +1,8 @@
+<data>
+    <xpath expr="//label[@name='name']" position="replace_attributes">
+        <label name="rec_name"/>
+    </xpath>
+    <xpath expr="//field[@name='name']" position="replace_attributes">
+        <field name="rec_name"/>
+    </xpath>
+</data>
