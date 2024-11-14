@@ -45,13 +45,13 @@ class Test(unittest.TestCase):
         product_in, = template.products
 
         # Create BOM
-        bom = BOM()
-        bom.outputs.new(product=product_out, quantity=1)
-        bom.inputs.new(product=product_in, quantity=1)
-        bom.save()
+        mbom = BOM()
+        mbom.outputs.new(product=product_out, quantity=1)
+        mbom.inputs.new(product=product_in, quantity=1)
+        mbom.save()
 
-        self.assertEqual(bom.rec_name, '[1] Output')
-        self.assertEqual(bom.name, '-')
+        self.assertEqual(mbom.rec_name, '[1] Output')
+        self.assertEqual(mbom.name, '-')
 
         # Create operations
         Operation = Model.get('production.routing.operation')
@@ -73,3 +73,8 @@ class Test(unittest.TestCase):
         step.operation = operation
 
         template.save()
+
+        bom, = BOM.find([('id', '!=', mbom.id)])
+        self.assertEqual(bom.rec_name, '[2] Output 2')
+        routing, = bom.routings
+        self.assertEqual(routing.rec_name, '[2] Output 2')
