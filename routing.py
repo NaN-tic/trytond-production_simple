@@ -7,6 +7,7 @@ class BOM(metaclass=PoolMeta):
     __name__ = 'production.bom'
     routings = fields.Many2Many(
         'production.routing-production.bom', 'bom', 'routing', 'Routings')
+    routings_editor = fields.One2Many('production.routing', 'bom', 'Routings Editor')
 
     def _product_boms(self):
         pool = Pool()
