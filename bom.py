@@ -54,7 +54,6 @@ class BOMOutput(metaclass=PoolMeta):
 class BOM(metaclass=PoolMeta):
     __name__ = 'production.bom'
 
-    routings_editor = fields.One2Many('production.routing', 'bom', 'Routings Editor')
     product = fields.Function(fields.Many2One('product.product', 'Product',
         states={
             'readonly': Eval('product_readonly', True),
