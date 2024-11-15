@@ -1,17 +1,6 @@
 #
-# Albert Cervera i Areny <albert@nan-tic.com>, 2024.
 msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Last-Translator: Albert Cervera i Areny <albert@nan-tic.com>\n"
-"PO-Revision-Date: 2024-11-14 11:01+0100\n"
-"Project-Id-Version: \n"
-"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
-"Language: ca_ES\n"
-"Content-Transfer-Encoding: 8bit\n"
-"MIME-Version: 1.0\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:product.product,boms_editor:"
 msgid "BOMs Editor"
@@ -29,6 +18,22 @@ msgctxt "field:production.bom,product_readonly:"
 msgid "Product Readonly"
 msgstr "Producte només de lectura"
 
+msgctxt "field:production.bom,routings:"
+msgid "Routings"
+msgstr "Rutes"
+
+msgctxt "field:production.bom,routings_editor:"
+msgid "Routings Editor"
+msgstr "Editor rutes"
+
 msgctxt "field:production.bom,template:"
 msgid "Template"
 msgstr "Plantilla"
+
+msgctxt "field:production.routing,bom:"
+msgid "BOM"
+msgstr "LdM"
+
+msgctxt "field:production.routing,bom_readonly:"
+msgid "BOM Readonly"
+msgstr "LdM només lectura"
