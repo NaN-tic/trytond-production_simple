@@ -10,6 +10,15 @@ class Template(metaclass=PoolMeta):
             'invisible': ~Bool(Eval('producible')),
             })
 
+    @classmethod
+    def copy(cls, templates, default=None):
+        if default is None:
+            default = {}
+        else:
+            default = default.copy()
+        default.setdefault('boms_editor', None)
+        return super().copy(templates, default=default)
+
 
 class Product(metaclass=PoolMeta):
     __name__ = 'product.product'
@@ -18,3 +27,12 @@ class Product(metaclass=PoolMeta):
         states={
             'invisible': ~Bool(Eval('producible')),
             })
+
+    @classmethod
+    def copy(cls, products, default=None):
+        if default is None:
+            default = {}
+        else:
+            default = default.copy()
+        default.setdefault('boms_editor', None)
+        return super().copy(products, default=default)
