@@ -9,6 +9,16 @@ class BOM(metaclass=PoolMeta):
         'production.routing-production.bom', 'bom', 'routing', 'Routings')
     routings_editor = fields.One2Many('production.routing', 'bom', 'Routings Editor')
 
+    @classmethod
+    def copy(cls, boms, default=None):
+        if default is None:
+            default = {}
+        else:
+            default = default.copy()
+        default.setdefault('routings', None)
+        default.setdefault('routings_editor', None)
+        return super().copy(boms, default=default)
+
     def _product_boms(self):
         pool = Pool()
         ProductBOM = pool.get('product.product-production.bom')
