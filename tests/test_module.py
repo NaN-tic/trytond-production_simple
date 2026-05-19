@@ -67,7 +67,7 @@ class ProductionSimplifiedTestCase(ModuleTestCase):
             'quantity': Decimal(1),
             'unit': unit,
             }])
-        
+
         with Transaction().set_user(user_id), \
             Transaction().set_context(_check_access=True), \
             self.assertRaises(AccessError):
