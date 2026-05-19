@@ -2,6 +2,9 @@
     <xpath expr="/tree" position="replace_attributes">
         <tree editable="1"/>
     </xpath>
+    <xpath expr="/tree/field[@name='rec_name']" position="replace">
+        <field name="product"/>
+    </xpath>
     <xpath expr="/tree/field[@name='quantity']" position="replace_attributes">
         <field name="quantity" symbol=""/>
     </xpath>
