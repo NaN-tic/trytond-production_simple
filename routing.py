@@ -94,10 +94,14 @@ class Routing(metaclass=PoolMeta):
         cls.name.readonly = True
 
     @classmethod
-    def create(cls, vlist):
-        vlist = [x.copy() for x in vlist]
-        for values in vlist:
+    def preprocess_values(cls, mode, values):
+        values = super().preprocess_values(mode, values)
+        if mode == 'create':
             values.setdefault('name', '-')
+        return values
+
+    @classmethod
+    def create(cls, vlist):
         routings = super().create(vlist)
         cls.update_products(routings)
         return routings
